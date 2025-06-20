@@ -1,0 +1,15 @@
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\bin\Debug\net9.0\ButikkOversikt.exe
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\bin\Debug\net9.0\ButikkOversikt.deps.json
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\bin\Debug\net9.0\ButikkOversikt.runtimeconfig.json
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\bin\Debug\net9.0\ButikkOversikt.dll
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\bin\Debug\net9.0\ButikkOversikt.pdb
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.AssemblyInfoInputs.cache
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.AssemblyInfo.cs
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.csproj.CoreCompileInputs.cache
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.sourcelink.json
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.dll
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\refint\ButikkOversikt.dll
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.pdb
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ButikkOversikt.genruntimeconfig.cache
+C:\Users\Greencom\Documents\skoleC#\ButikkOversikt\ButikkOversikt\obj\Debug\net9.0\ref\ButikkOversikt.dll

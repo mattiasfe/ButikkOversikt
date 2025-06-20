@@ -2,19 +2,35 @@
 
 public class Temu : Shop, IStore
 {
-    public Temu(string shopType, string speciality, string price) 
-        : base(shopType, speciality, price)
+    public string ItemName { get; set; }
+    public int ItemPrice { get; set; }
+    
+    public Temu(string itemName, int itemPrice) 
+        : base(shopType: "Everything", speciality: "Cheap crap", price: "Low", name: "Temu")
     {
-        
+        ItemName = itemName;
+        ItemPrice = itemPrice;
     }
 
     public void PriceLvl()
     {
-        throw new NotImplementedException();
-    }
+        List<IStore> shopProduct = new List<IStore>
+        {
+            new Temu(ItemName = "Fountain", ItemPrice = 20),
+            new Temu(ItemName = "ToothPick Gun", ItemPrice = 50),
+            new Temu(ItemName = "Princes bottle opener", ItemPrice = 74),
+            
+        };
+        double avragePrice = shopProduct.Average(i => i.ItemPrice);
+        Console.WriteLine($"{avragePrice}");}
 
-    public void StoreSpeciality()
+    public void StoreSpeciality(string name, string speciality, double avragePrice)
     {
-        throw new NotImplementedException();
+             PriceLvl();
+            Console.WriteLine($"""
+                                 {name}'s speciality is {speciality}
+                                 {name}'s pricerange is {avragePrice}
+                                 """);
     }
+    
 }
