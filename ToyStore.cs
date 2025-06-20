@@ -2,21 +2,59 @@
 
 public class ToyStore : Shop, IStore
 {
-    public ToyStore(string shopType, string speciality, string price, string name) 
-        : base(shopType, speciality, price, name)
+    private string _price; 
+    
+        List<Product> shopProducts = new List<Product>
+        {
+            new Product("Batman",  97),
+            new Product("Barbie", 120),
+            new Product("Bow&Arrow", 340),
+            new Product("Lego", 220),
+            
+        };
+    public ToyStore(string itemName, int itemPrice) 
+        : base(shopType: "Toy", speciality: "Toys", price: "Medium", name: "ToyStore")
     {
+
+    
     }
 
-    public string ItemName { get; set; }
-    public int ItemPrice { get; set; }
 
     public void PriceLvl()
     {
-        throw new NotImplementedException();
+        double avragePrice = 0;
+        avragePrice = shopProducts.Average(i => i.Price);
+        PriceCheck(avragePrice);
+        StoreSpeciality("ToyStore", "Toys");
+        Console.WriteLine($"{avragePrice}Kr");
     }
 
-    public void StoreSpeciality(string name, string speciality, double avragePrice)
+    public void PriceCheck(double avragePrice)
     {
-        throw new NotImplementedException();
+        
+        if (avragePrice > 200)
+        {
+             _price = "High";
+        }      
+        if (avragePrice < 100)
+        {
+             _price = "Low";
+        }     
+        if (avragePrice > 100 && avragePrice < 200)
+        {
+             _price = "Medium";
+        }
+        
+    }
+    
+
+    public void StoreSpeciality(string name, string speciality)
+    {
+        Console.Clear();
+        Console.WriteLine($"""
+                           {name}'s speciality is {speciality}
+                           {name}'s pricerange is: 
+                           {_price}
+                           """);
     }
 }

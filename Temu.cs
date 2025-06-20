@@ -2,35 +2,58 @@
 
 public class Temu : Shop, IStore
 {
-    public string ItemName { get; set; }
-    public int ItemPrice { get; set; }
+    private string _price; 
     
+        List<Product> shopProducts = new List<Product>
+        {
+            new Product("Fountain", 20),
+            new Product("ToothPick Gun", 50),
+            new Product("Princes bottle opener", 74),
+            new Product("Batman bottle opener", 47),
+            
+        };
     public Temu(string itemName, int itemPrice) 
         : base(shopType: "Everything", speciality: "Cheap crap", price: "Low", name: "Temu")
     {
-        ItemName = itemName;
-        ItemPrice = itemPrice;
+
     }
 
     public void PriceLvl()
     {
-        List<IStore> shopProduct = new List<IStore>
-        {
-            new Temu(ItemName = "Fountain", ItemPrice = 20),
-            new Temu(ItemName = "ToothPick Gun", ItemPrice = 50),
-            new Temu(ItemName = "Princes bottle opener", ItemPrice = 74),
-            
-        };
-        double avragePrice = shopProduct.Average(i => i.ItemPrice);
-        Console.WriteLine($"{avragePrice}");}
-
-    public void StoreSpeciality(string name, string speciality, double avragePrice)
-    {
-             PriceLvl();
-            Console.WriteLine($"""
-                                 {name}'s speciality is {speciality}
-                                 {name}'s pricerange is {avragePrice}
-                                 """);
+        double avragePrice = 0;
+        avragePrice = shopProducts.Average(i => i.Price);
+        PriceCheck(avragePrice);
+        StoreSpeciality("Temu", "Cheap Crap");
+        Console.WriteLine($"{avragePrice}Kr");
+        
     }
+    
+    public void PriceCheck(double avragePrice)
+    {
+        
+        if (avragePrice > 200)
+        {
+            _price = "High";
+        }      
+        if (avragePrice < 100)
+        {
+            _price = "Low";
+        }     
+        if (avragePrice > 100 && avragePrice < 200)
+        {
+            _price = "Medium";
+        }
+        
+    }
+    public void StoreSpeciality(string name, string speciality)
+    {
+        Console.Clear();
+        Console.WriteLine($"""
+                           {name}'s speciality is {speciality}
+                           {name}'s pricerange is: 
+                           {_price}
+                           """);
+    }
+
     
 }

@@ -1,5 +1,8 @@
 ﻿using ButikkOversikt;
 
 
-var temu = new Temu("ugabuga", 40);
-temu.StoreSpeciality();
+var item = new Item("uggabugga", 22, 33);
+item.MainMenu();
+
+
+
