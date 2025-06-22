@@ -24,10 +24,21 @@ public class Temu : Shop, IStore
         avragePrice = shopProducts.Average(i => i.Price);
         PriceCheck(avragePrice);
         StoreSpeciality("Temu", "Cheap Crap");
-        Console.WriteLine($"{avragePrice}Kr");
+        Console.WriteLine($"The average Price is: {avragePrice}Kr");
         
     }
+
     
+    public void PriceMinMax()
+    {
+        var minPrice = shopProducts.MinBy(p => p.Price);
+        var maxPrice = shopProducts.MaxBy(i => i.Price);
+        Console.WriteLine($"""
+                           The cheapest product is:{minPrice.Name} ({minPrice.Price}Kr)
+                           The most expensive product is:{maxPrice.Name} ({maxPrice.Price}Kr)
+                           """);
+    }
+
     public void PriceCheck(double avragePrice)
     {
         
@@ -51,8 +62,8 @@ public class Temu : Shop, IStore
         Console.WriteLine($"""
                            {name}'s speciality is {speciality}
                            {name}'s pricerange is: 
-                           {_price}
                            """);
+        Console.WriteLine($"The price lvl is: {_price}");
     }
 
     

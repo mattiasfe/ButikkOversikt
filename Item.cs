@@ -5,11 +5,15 @@ public class Item
     private string _name;
     private int _price;
     private double _avragePrice;
-    public Item(string name, int price, double avragePrice)
+    private int _minPrice;
+    private int _maxPrice;
+    public Item(string name, int price, double avragePrice, int maxPrice, int minPrice)
     {
         _name = name;
         _price = price;
         _avragePrice = avragePrice;
+        _maxPrice = maxPrice;
+        _minPrice = minPrice;
     }
     
 
@@ -27,6 +31,7 @@ public class Item
             case "1":
                 var temu = new Temu("uggabugga", 40);
                 temu.PriceLvl();
+                temu.PriceMinMax();
                 break;
             case "2":
                 var gucci = new Gucci("uggabugga2", 40);

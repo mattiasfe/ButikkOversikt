@@ -26,7 +26,19 @@ public class ToyStore : Shop, IStore
         avragePrice = shopProducts.Average(i => i.Price);
         PriceCheck(avragePrice);
         StoreSpeciality("ToyStore", "Toys");
-        Console.WriteLine($"{avragePrice}Kr");
+        Console.WriteLine($"The average Price is: {avragePrice}Kr");
+    }
+
+    public void PriceMinMax()
+    {
+        int minPrice = 0;
+        int maxPrice = 0;
+        minPrice = shopProducts.Min(i => i.Price);
+        maxPrice = shopProducts.Max(i => i.Price);
+        Console.WriteLine($"""
+                           The cheapest product is: {minPrice}
+                           The most expensive product is: {maxPrice}
+                           """);
     }
 
     public void PriceCheck(double avragePrice)
@@ -54,7 +66,7 @@ public class ToyStore : Shop, IStore
         Console.WriteLine($"""
                            {name}'s speciality is {speciality}
                            {name}'s pricerange is: 
-                           {_price}
                            """);
+        Console.WriteLine($"The price lvl is: {_price}");
     }
 }
