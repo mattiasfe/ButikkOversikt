@@ -19,7 +19,7 @@ public class Item
 
     public void MainMenu()
     {
-        
+        Console.Clear();
         Console.WriteLine("""
                           '1' For Temu
                           '2' For Gucci
@@ -32,18 +32,30 @@ public class Item
                 var temu = new Temu("uggabugga", 40);
                 temu.PriceLvl();
                 temu.PriceMinMax();
+                ReturnToMenu();
                 break;
             case "2":
                 var gucci = new Gucci("uggabugga2", 40);
                 gucci.PriceLvl();
+                gucci.PriceMinMax();
+                ReturnToMenu();
                 break;
             case "3":
                 var toyStore = new ToyStore("uggabugga3", 40);
                 toyStore.PriceLvl();
+                toyStore.PriceMinMax();
+                ReturnToMenu();
                 break;
             default:
                 Console.WriteLine("Try again");
                 break;
+            
         }
+    }
+
+    public void ReturnToMenu()
+    {
+        Console.ReadKey();
+        MainMenu();
     }
 }

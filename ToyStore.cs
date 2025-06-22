@@ -31,13 +31,11 @@ public class ToyStore : Shop, IStore
 
     public void PriceMinMax()
     {
-        int minPrice = 0;
-        int maxPrice = 0;
-        minPrice = shopProducts.Min(i => i.Price);
-        maxPrice = shopProducts.Max(i => i.Price);
+        var minPrice = shopProducts.MinBy(p => p.Price);
+        var maxPrice = shopProducts.MaxBy(i => i.Price);
         Console.WriteLine($"""
-                           The cheapest product is: {minPrice}
-                           The most expensive product is: {maxPrice}
+                           The cheapest product is:{minPrice.Name} ({minPrice.Price}Kr)
+                           The most expensive product is:{maxPrice.Name} ({maxPrice.Price}Kr)
                            """);
     }
 
