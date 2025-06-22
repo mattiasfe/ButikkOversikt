@@ -6,6 +6,7 @@ public class Product
     public int Price;
     public bool minPrice;
     public bool maxPrice;
+    public string orderList;
 
     public Product(string name, int price)
     {

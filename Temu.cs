@@ -41,20 +41,13 @@ public class Temu : Shop, IStore
 
     public void PriceCheck(double avragePrice)
     {
-        
-        if (avragePrice > 200)
+        _price = avragePrice switch
         {
-            _price = "High";
-        }      
-        if (avragePrice < 100)
-        {
-            _price = "Low";
-        }     
-        if (avragePrice > 100 && avragePrice < 200)
-        {
-            _price = "Medium";
-        }
-        
+            > 200 => "High",
+            < 100 => "Low",
+            > 100 and < 200 => "Medium",
+            _ => _price
+        };
     }
     public void StoreSpeciality(string name, string speciality)
     {

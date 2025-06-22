@@ -1,7 +1,7 @@
 ﻿using ButikkOversikt;
 
 
-var item = new Item("uggabugga", 22, 33, 100, 0);
+var item = new Item("uggabugga", 22, 33, 100, 0, "gg");
 item.MainMenu();
 
 

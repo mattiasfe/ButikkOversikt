@@ -7,13 +7,15 @@ public class Item
     private double _avragePrice;
     private int _minPrice;
     private int _maxPrice;
-    public Item(string name, int price, double avragePrice, int maxPrice, int minPrice)
+    private string _orderList;
+    public Item(string name, int price, double avragePrice, int maxPrice, int minPrice, string orderList)
     {
         _name = name;
         _price = price;
         _avragePrice = avragePrice;
         _maxPrice = maxPrice;
         _minPrice = minPrice;
+        _orderList = orderList;
     }
     
 
@@ -53,7 +55,7 @@ public class Item
         }
     }
 
-    public void ReturnToMenu()
+    private void ReturnToMenu()
     {
         Console.ReadKey();
         MainMenu();
