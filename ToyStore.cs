@@ -2,16 +2,10 @@
 
 public class ToyStore : Shop, IStore
 {
-    private string _price; 
-    
-        List<Product> shopProducts = new List<Product>
-        {
-            new Product("Batman",  97),
-            new Product("Barbie", 120),
-            new Product("Bow&Arrow", 340),
-            new Product("Lego", 220),
-            
-        };
+    private string _price;
+
+    private List<Product> shopProducts = new List<Product>();
+
     public ToyStore(string itemName, int itemPrice) 
         : base(shopType: "Toy", speciality: "Toys", price: "Medium", name: "ToyStore")
     {
@@ -37,6 +31,24 @@ public class ToyStore : Shop, IStore
                            The cheapest product is:{minPrice.Name} ({minPrice.Price}Kr)
                            The most expensive product is:{maxPrice.Name} ({maxPrice.Price}Kr)
                            """);
+    }
+
+    public void AddItem()
+    {
+        while (true)
+        {
+            Console.WriteLine("Add a product to the list (Write 'done' to exit):");
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            
+            if(name.ToLower() == "done")
+                break;
+            Console.WriteLine("Price: ");
+            int price = int.Parse(Console.ReadLine());
+            
+            shopProducts.Add(new Product(name, price));
+        }
+        shopProducts.ForEach(i => Console.WriteLine($"{i.Name} ({i.Price} Kr)"));
     }
 
     public void PriceCheck(double avragePrice)

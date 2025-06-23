@@ -2,16 +2,10 @@
 
 public class Temu : Shop, IStore
 {
-    private string _price; 
-    
-        List<Product> shopProducts = new List<Product>
-        {
-            new Product("Fountain", 20),
-            new Product("ToothPick Gun", 50),
-            new Product("Princes bottle opener", 74),
-            new Product("Batman bottle opener", 47),
-            
-        };
+    private string _price;
+
+    private List<Product> shopProducts = new List<Product>();
+
     public Temu(string itemName, int itemPrice) 
         : base(shopType: "Everything", speciality: "Cheap crap", price: "Low", name: "Temu")
     {
@@ -48,6 +42,23 @@ public class Temu : Shop, IStore
             > 100 and < 200 => "Medium",
             _ => _price
         };
+    }
+    public void AddItem()
+    {
+        while (true)
+        {
+            Console.WriteLine("Add a product to the list (Write 'done' to exit):");
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            
+            if(name.ToLower() == "done")
+                break;
+            Console.WriteLine("Price: ");
+            int price = int.Parse(Console.ReadLine());
+            
+            shopProducts.Add(new Product(name, price));
+        }
+        shopProducts.ForEach(i => Console.WriteLine($"{i.Name} ({i.Price} Kr)"));
     }
     public void StoreSpeciality(string name, string speciality)
     {

@@ -2,16 +2,10 @@
 
 public class Gucci : Shop, IStore
 {
-    private string _price; 
-    
-        List<Product> shopProducts = new List<Product>
-        {
-            new Product("Lepoard Bag", 50000),
-            new Product("SunGlasses", 12000),
-            new Product("Hoodie", 15000),
-            new Product("Pants", 11000),
-            
-        };
+    private string _price;
+
+    private List<Product> shopProducts = new List<Product>();
+
     public Gucci(string itemName, int itemPrice) 
         : base(shopType: "Clothing", speciality: "High prices for shit clothing", price: "High", name: "Gucci")
     {
@@ -32,11 +26,11 @@ public class Gucci : Shop, IStore
     {
         var minPrice = shopProducts.MinBy(p => p.Price);
         var maxPrice = shopProducts.MaxBy(i => i.Price);
-        var orderList = shopProducts.OrderBy(p => p.Name);
-        foreach (var order in orderList)
-        {
-            Console.WriteLine($"{order}");
-        }
+        // var orderList = shopProducts.OrderBy(p => p.Name);
+        // foreach (var order in orderList)
+        // {
+        //     Console.WriteLine($"{order}");
+        // }
         Console.WriteLine($"""
                            The cheapest product is:{minPrice.Name} ({minPrice.Price}Kr)
                            The most expensive product is:{maxPrice.Name} ({maxPrice.Price}Kr)
@@ -52,6 +46,23 @@ public class Gucci : Shop, IStore
             > 100 and < 200 => "Medium",
             _ => _price
         };
+    }
+    public void AddItem()
+    {
+        while (true)
+        {
+            Console.WriteLine("Add a product to the list (Write 'done' to exit):");
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            
+            if(name.ToLower() == "done")
+                break;
+            Console.WriteLine("Price: ");
+            int price = int.Parse(Console.ReadLine());
+            
+            shopProducts.Add(new Product(name, price));
+        }
+        shopProducts.ForEach(i => Console.WriteLine($"{i.Name} ({i.Price} Kr)"));
     }
     public void StoreSpeciality(string name, string speciality)
     {

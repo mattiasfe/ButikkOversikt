@@ -32,18 +32,21 @@ public class Item
         {
             case "1":
                 var temu = new Temu("uggabugga", 40);
+                temu.AddItem();
                 temu.PriceLvl();
                 temu.PriceMinMax();
                 ReturnToMenu();
                 break;
             case "2":
                 var gucci = new Gucci("uggabugga2", 40);
+                gucci.AddItem();
                 gucci.PriceLvl();
                 gucci.PriceMinMax();
                 ReturnToMenu();
                 break;
             case "3":
                 var toyStore = new ToyStore("uggabugga3", 40);
+                toyStore.AddItem();
                 toyStore.PriceLvl();
                 toyStore.PriceMinMax();
                 ReturnToMenu();
